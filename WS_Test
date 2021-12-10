@@ -7,35 +7,21 @@
 // @match        https://www.worldscale.co.uk/voyages/*
 // @icon         https://www.google.com/s2/favicons?domain=worldscale.co.uk
 // @grant        none
-// @require      http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
-// @require      https://gist.githubusercontent.com/schurpf/26d9bf85384e70596561/raw/9c97aa67ff9c5d56be34a55ad6c18a314e5eb548/waitForKeyElements.js
-// @grant    GM_addStyle
 // ==/UserScript==
 
-//(function changeYear() {
-//    var opt = document.createElement("option");
-//    var content = document.createTextNode("2022");
-//    var attr = document.createAttribute("value");
-//    attr.nodevalue="2022";
-//    opt.setAttributeNode(attr);
-//    var targetEl = document.getElementsByClassName("ws-input ws-input-select ng-valid ng-touched")
-//    targetEl.appendChild(opt);
+(function() {
 
-//    var targetEl = document.getElementsByClassName("ws-input ws-input-select ng-pristine ng-touched")
-//    targetEl.appendChild(opt);
-//})();
-
-/* globals jQuery, $, waitForKeyElements */
-
-waitForKeyElements ("select [class^=ws-input ws-input-select]:has(option [value=2019])", selectCountryDropdown);
-//waitForKeyElements (".format-select:has(option[value=2019])", selectCountryDropdown);
-
-function selectCountryDropdown (jNode) {
-var evt = new Event ("click");
-jNode[0].dispatchEvent (evt);
-
-jNode.val('2022');
-
-evt = new Event ("change");
-jNode[0].dispatchEvent (evt);
-}
+    // Your code here...
+    window.addEventListener('load', function () {
+//     window.addEventListener('load', function () {
+//     window.addEventListener('hashchange', function () {
+        var select = document.getElementsByTagName("select")[0];
+        var elements = document.getElementsByTagName("select");
+        console.log(select);
+        console.log(elements);
+        if (select) {
+            select.options[select.options.length] = new Option('2022', '2022');
+            console.log("Document changed!");
+        }
+    });
+})();
