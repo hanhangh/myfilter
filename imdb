@@ -344,5 +344,7 @@ www-tradewindsnews-com.sunymaritime.idm.oclc.org###onetrust-consent-sdk
 slickdeals.net##li[data-label-promoted="1"]
 
 
+
 ! 2022-01-07 https://www.instacart.com
-www.instacart.com##div[class="css-0"]:has-text(Sponsored)
+www.instacart.com##.css-1xuipcy > li:has-text(Sponsored)
+
